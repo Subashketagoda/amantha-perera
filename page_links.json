@@ -1,0 +1,690 @@
+[
+  {
+    "page": 1,
+    "pageObj": 5,
+    "links": [
+      {
+        "annotObj": 4,
+        "uri": "https://www.instagram.com/notamanthaperera/",
+        "rect": [
+          128,
+          50,
+          900,
+          100
+        ]
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "pageObj": 7,
+    "links": []
+  },
+  {
+    "page": 3,
+    "pageObj": 11,
+    "links": [
+      {
+        "annotObj": 9,
+        "uri": "https://www.instagram.com/notamanthaperera/",
+        "rect": [
+          796,
+          660,
+          1792,
+          770
+        ]
+      },
+      {
+        "annotObj": 10,
+        "uri": "https://www.tiktok.com/@notamanthaperera",
+        "rect": [
+          796,
+          545,
+          1792,
+          655
+        ]
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "pageObj": 13,
+    "links": []
+  },
+  {
+    "page": 5,
+    "pageObj": 27,
+    "links": [
+      {
+        "annotObj": 15,
+        "uri": "https://www.organicslk.com",
+        "rect": [
+          340,
+          512,
+          552.4219,
+          558
+        ]
+      },
+      {
+        "annotObj": 16,
+        "uri": "https://www.organicslk.com",
+        "rect": [
+          128,
+          482,
+          338,
+          810
+        ]
+      },
+      {
+        "annotObj": 17,
+        "uri": "https://www.instagram.com/cargopizzeria/",
+        "rect": [
+          902.6667,
+          512,
+          1119.167,
+          558
+        ]
+      },
+      {
+        "annotObj": 18,
+        "uri": "https://www.instagram.com/cargopizzeria/",
+        "rect": [
+          690.6667,
+          482,
+          900.6667,
+          810
+        ]
+      },
+      {
+        "annotObj": 19,
+        "uri": "https://www.instagram.com/drinkdivide/",
+        "rect": [
+          1465.333,
+          512,
+          1654.083,
+          558
+        ]
+      },
+      {
+        "annotObj": 20,
+        "uri": "https://www.instagram.com/drinkdivide/",
+        "rect": [
+          1253.333,
+          482,
+          1463.333,
+          810
+        ]
+      },
+      {
+        "annotObj": 21,
+        "uri": "https://www.thesun.lk/author/Amantha-Perera/617",
+        "rect": [
+          340,
+          160,
+          567.3281,
+          206
+        ]
+      },
+      {
+        "annotObj": 22,
+        "uri": "https://www.thesun.lk/author/Amantha-Perera/617",
+        "rect": [
+          128,
+          130,
+          338,
+          458
+        ]
+      },
+      {
+        "annotObj": 23,
+        "uri": "https://open.spotify.com/track/5evjMztuLtK5OQ259UUZOF",
+        "rect": [
+          902.6667,
+          160,
+          1131.042,
+          206
+        ]
+      },
+      {
+        "annotObj": 24,
+        "uri": "https://open.spotify.com/track/5evjMztuLtK5OQ259UUZOF",
+        "rect": [
+          690.6667,
+          130,
+          900.6667,
+          458
+        ]
+      },
+      {
+        "annotObj": 25,
+        "uri": "https://www.instagram.com/reel/DVJRnT9iZwE/",
+        "rect": [
+          1465.333,
+          160,
+          1706.911,
+          206
+        ]
+      },
+      {
+        "annotObj": 26,
+        "uri": "https://www.instagram.com/reel/DVJRnT9iZwE/",
+        "rect": [
+          1253.333,
+          130,
+          1463.333,
+          458
+        ]
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "pageObj": 31,
+    "links": [
+      {
+        "annotObj": 29,
+        "uri": "https://www.organicslk.com",
+        "rect": [
+          1475.2,
+          160,
+          1792,
+          440
+        ]
+      },
+      {
+        "annotObj": 30,
+        "uri": "https://www.linkedin.com/in/amanthaperera27/",
+        "rect": [
+          128,
+          462,
+          467.9219,
+          514
+        ]
+      }
+    ]
+  },
+  {
+    "page": 7,
+    "pageObj": 36,
+    "links": [
+      {
+        "annotObj": 33,
+        "uri": "https://www.organicslk.com",
+        "rect": [
+          840,
+          764,
+          1060,
+          952
+        ]
+      },
+      {
+        "annotObj": 34,
+        "uri": "https://www.organicslk.com",
+        "rect": [
+          840,
+          123,
+          1097.188,
+          175
+        ]
+      },
+      {
+        "annotObj": 35,
+        "uri": "https://www.thesun.lk/solar_hq/Why-Going-ORGANIC-Works/557-303400",
+        "rect": [
+          1113.188,
+          123,
+          1487.203,
+          175
+        ]
+      }
+    ]
+  },
+  {
+    "page": 8,
+    "pageObj": 41,
+    "links": [
+      {
+        "annotObj": 38,
+        "uri": "https://www.linkedin.com/posts/amanthaperera27_marketingstrategy-brandstorytelling-viralmarketing-ugcPost-7419923813204746242-SFy4/",
+        "rect": [
+          128,
+          158,
+          414.9062,
+          210
+        ]
+      },
+      {
+        "annotObj": 39,
+        "uri": "https://www.thesun.lk/front_page/How-I-Executed-How-I-Executed-Engagement-to-Sell-Real-Rings/557-304647",
+        "rect": [
+          430.9062,
+          158,
+          665.125,
+          210
+        ]
+      },
+      {
+        "annotObj": 40,
+        "uri": "https://www.linkedin.com/posts/amanthaperera27_marketingstrategy-brandstorytelling-viralmarketing-ugcPost-7419923813204746242-SFy4/",
+        "rect": [
+          1192,
+          128,
+          1792,
+          952
+        ]
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "pageObj": 44,
+    "links": [
+      {
+        "annotObj": 43,
+        "uri": "https://www.linkedin.com/posts/amanthaperera27_marketingstrategy-brandstorytelling-viralmarketing-ugcPost-7419923813204746242-SFy4/",
+        "rect": [
+          1192,
+          108,
+          1792,
+          972
+        ]
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "pageObj": 48,
+    "links": [
+      {
+        "annotObj": 46,
+        "uri": "https://www.linkedin.com/feed/update/urn:li:activity:7445756292750647296/",
+        "rect": [
+          128,
+          138,
+          414.9062,
+          190
+        ]
+      },
+      {
+        "annotObj": 47,
+        "uri": "https://www.linkedin.com/feed/update/urn:li:activity:7445756292750647296/",
+        "rect": [
+          1192,
+          572,
+          1792,
+          952
+        ]
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "pageObj": 52,
+    "links": [
+      {
+        "annotObj": 50,
+        "uri": "https://www.instagram.com/sarigama.events/",
+        "rect": [
+          128,
+          160,
+          944,
+          750
+        ]
+      },
+      {
+        "annotObj": 51,
+        "uri": "https://www.organicslk.com",
+        "rect": [
+          976,
+          160,
+          1792,
+          750
+        ]
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "pageObj": 54,
+    "links": []
+  },
+  {
+    "page": 13,
+    "pageObj": 59,
+    "links": [
+      {
+        "annotObj": 56,
+        "uri": "https://www.instagram.com/drinkdivide/",
+        "rect": [
+          128,
+          130,
+          666.6667,
+          640
+        ]
+      },
+      {
+        "annotObj": 57,
+        "uri": "https://www.instagram.com/cargopizzeria/",
+        "rect": [
+          690.6667,
+          130,
+          1229.333,
+          640
+        ]
+      },
+      {
+        "annotObj": 58,
+        "uri": "https://www.organicslk.com",
+        "rect": [
+          1253.333,
+          130,
+          1792,
+          640
+        ]
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "pageObj": 63,
+    "links": [
+      {
+        "annotObj": 61,
+        "uri": "https://www.instagram.com/reel/DVJRnT9iZwE/",
+        "rect": [
+          1500,
+          128,
+          1787.594,
+          180
+        ]
+      },
+      {
+        "annotObj": 62,
+        "uri": "https://www.instagram.com/reel/DVJRnT9iZwE/",
+        "rect": [
+          0,
+          220,
+          1920,
+          1080
+        ]
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "pageObj": 67,
+    "links": [
+      {
+        "annotObj": 65,
+        "uri": "https://www.instagram.com/reel/DVJRnT9iZwE/",
+        "rect": [
+          128,
+          388,
+          415.2969,
+          440
+        ]
+      },
+      {
+        "annotObj": 66,
+        "uri": "https://www.instagram.com/reel/DVJRnT9iZwE/",
+        "rect": [
+          900,
+          128,
+          1792,
+          952
+        ]
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "pageObj": 72,
+    "links": [
+      {
+        "annotObj": 69,
+        "uri": "https://open.spotify.com/search/Chandi%20Kollek%20Amantha%20Perera",
+        "rect": [
+          128,
+          350,
+          1108,
+          540
+        ]
+      },
+      {
+        "annotObj": 70,
+        "uri": "https://open.spotify.com/track/5evjMztuLtK5OQ259UUZOF",
+        "rect": [
+          128,
+          140,
+          1108,
+          330
+        ]
+      },
+      {
+        "annotObj": 71,
+        "uri": "https://open.spotify.com/search/Chandi%20Kollek%20Amantha%20Perera",
+        "rect": [
+          1182,
+          98,
+          1802,
+          982
+        ]
+      }
+    ]
+  },
+  {
+    "page": 17,
+    "pageObj": 75,
+    "links": [
+      {
+        "annotObj": 74,
+        "uri": "https://www.dailymirror.lk/the_weekend_online/Organic-Launches-A-Ground-breaking-Step-for-Sri-Lankas-Marketing-Industry/426-301442",
+        "rect": [
+          128,
+          160,
+          868,
+          300
+        ]
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "pageObj": 82,
+    "links": [
+      {
+        "annotObj": 77,
+        "uri": "https://www.youtube.com/results?search_query=Amantha+Perera",
+        "rect": [
+          128,
+          128,
+          688,
+          952
+        ]
+      },
+      {
+        "annotObj": 78,
+        "uri": "https://youtu.be/VdoF_ZyT_aw",
+        "rect": [
+          744,
+          460,
+          1258,
+          760
+        ]
+      },
+      {
+        "annotObj": 79,
+        "uri": "https://youtu.be/wdJOzfR0RXw",
+        "rect": [
+          1278,
+          460,
+          1792,
+          760
+        ]
+      },
+      {
+        "annotObj": 80,
+        "uri": "https://youtu.be/RuWBBsG8ifk",
+        "rect": [
+          744,
+          140,
+          1258,
+          440
+        ]
+      },
+      {
+        "annotObj": 81,
+        "uri": "https://youtu.be/Ycj10VxAU_w",
+        "rect": [
+          1278,
+          140,
+          1792,
+          440
+        ]
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "pageObj": 88,
+    "links": [
+      {
+        "annotObj": 84,
+        "uri": "https://www.thesun.lk/author/Amantha-Perera/617",
+        "rect": [
+          110,
+          210,
+          587,
+          910
+        ]
+      },
+      {
+        "annotObj": 85,
+        "uri": "https://www.dailymirror.lk/the_weekend_online/Organic-Launches-A-Ground-breaking-Step-for-Sri-Lankas-Marketing-Industry/426-301442",
+        "rect": [
+          430,
+          156,
+          970,
+          970
+        ]
+      },
+      {
+        "annotObj": 86,
+        "uri": "https://www.thesun.lk/author/Amantha-Perera/617",
+        "rect": [
+          1040,
+          256.96,
+          1325.938,
+          308.96
+        ]
+      },
+      {
+        "annotObj": 87,
+        "uri": "https://www.dailymirror.lk/the_weekend_online/Organic-Launches-A-Ground-breaking-Step-for-Sri-Lankas-Marketing-Industry/426-301442",
+        "rect": [
+          1341.938,
+          256.96,
+          1645.5,
+          308.96
+        ]
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "pageObj": 91,
+    "links": [
+      {
+        "annotObj": 90,
+        "uri": "https://www.instagram.com/notamanthaperera/",
+        "rect": [
+          1152,
+          128,
+          1792,
+          952
+        ]
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "pageObj": 93,
+    "links": []
+  },
+  {
+    "page": 22,
+    "pageObj": 95,
+    "links": []
+  },
+  {
+    "page": 23,
+    "pageObj": 97,
+    "links": []
+  },
+  {
+    "page": 24,
+    "pageObj": 105,
+    "links": [
+      {
+        "annotObj": 99,
+        "uri": "mailto:amanthaperera02@gmail.com",
+        "rect": [
+          128,
+          414,
+          723.3125,
+          490
+        ]
+      },
+      {
+        "annotObj": 100,
+        "uri": "tel:+94761521091",
+        "rect": [
+          128,
+          338,
+          440.6875,
+          414
+        ]
+      },
+      {
+        "annotObj": 101,
+        "uri": "https://www.instagram.com/notamanthaperera/",
+        "rect": [
+          128,
+          220,
+          588,
+          300
+        ]
+      },
+      {
+        "annotObj": 102,
+        "uri": "https://www.tiktok.com/@notamanthaperera",
+        "rect": [
+          628,
+          220,
+          1088,
+          300
+        ]
+      },
+      {
+        "annotObj": 103,
+        "uri": "https://www.linkedin.com/in/amanthaperera27/",
+        "rect": [
+          128,
+          124,
+          588,
+          204
+        ]
+      },
+      {
+        "annotObj": 104,
+        "uri": "https://www.organicslk.com",
+        "rect": [
+          628,
+          124,
+          1088,
+          204
+        ]
+      }
+    ]
+  }
+]
