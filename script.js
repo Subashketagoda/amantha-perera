@@ -105,6 +105,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // 3b. Touch swipe navigation for mobile
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchStartTime = 0;
+
+  window.addEventListener('touchstart', (e) => {
+    // If modal or TOC drawer is open, ignore slide swipe
+    if ((mediaModal && mediaModal.classList.contains('active')) ||
+        (tocBackdrop && tocBackdrop.classList.contains('active'))) {
+      return;
+    }
+    if (e.touches.length === 1) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchStartTime = Date.now();
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchend', (e) => {
+    if ((mediaModal && mediaModal.classList.contains('active')) ||
+        (tocBackdrop && tocBackdrop.classList.contains('active'))) {
+      return;
+    }
+    if (e.changedTouches.length === 1) {
+      const touchEndX = e.changedTouches[0].clientX;
+      const touchEndY = e.changedTouches[0].clientY;
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
+      const duration = Date.now() - touchStartTime;
+
+      // Thresholds:
+      // Minimum horizontal distance: 48px
+      // Horizontal swipe must dominate vertical swipe (horizontal > vertical * 1.4)
+      // Duration must be quick gesture: under 650ms
+      if (Math.abs(deltaX) > 48 && Math.abs(deltaX) > Math.abs(deltaY) * 1.4 && duration < 650) {
+        if (deltaX < 0) {
+          // Swiped left -> advance to next slide
+          scrollToSlide(Math.min(slides.length - 1, currentSlideIndex + 1));
+        } else {
+          // Swiped right -> go to previous slide
+          scrollToSlide(Math.max(0, currentSlideIndex - 1));
+        }
+      }
+    }
+  }, { passive: true });
+
   // 4. TOC Drawer functionality
   function openToc() {
     if (tocBackdrop) {
