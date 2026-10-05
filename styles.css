@@ -97,30 +97,41 @@ body.deck-body {
 }
 
 .preloader-brand {
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
-.preloader-logo {
-  font-family: var(--font-heading);
-  font-size: clamp(3.2rem, 7vw, 4.4rem);
-  font-weight: 900;
-  letter-spacing: -0.04em;
+.preloader-logo-4a {
+  font-family: 'Anton', 'Oswald', var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 0.92;
+  text-align: center;
   color: #ffffff;
-  display: inline-block;
-  line-height: 1;
 }
 
-.preloader-dot {
-  color: var(--color-yellow);
+.preloader-logo-4a .logo-line {
+  font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+  display: block;
+}
+
+.preloader-logo-4a .logo-dot-square {
+  display: inline-block;
+  width: clamp(10px, 1.8vw, 14px);
+  height: clamp(10px, 1.8vw, 14px);
+  background-color: var(--color-yellow);
+  margin-left: 6px;
+  vertical-align: baseline;
+  box-shadow: 0 0 14px rgba(255, 228, 16, 0.5);
+  border-radius: 1px;
 }
 
 .preloader-track {
-  width: 130px;
+  width: 140px;
   height: 2px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 2px;
   overflow: hidden;
-  margin: 0 auto 16px;
+  margin: 22px auto 16px;
 }
 
 .preloader-bar {
@@ -201,12 +212,26 @@ a {
 }
 
 .brand-name {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 15px;
+  font-family: 'Anton', 'Oswald', var(--font-heading);
+  font-weight: 400;
+  font-size: 16px;
   letter-spacing: 0.05em;
   color: #ffffff;
   transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.nav-dot-square {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: var(--color-yellow);
+  margin-left: 4px;
+  vertical-align: baseline;
+  border-radius: 1px;
+  box-shadow: 0 0 8px rgba(255, 228, 16, 0.6);
 }
 
 .brand-sub {

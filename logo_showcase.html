@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amantha Perera — Logo Option 04 + 'NOT' Variations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@700&family=Plus+Jakarta+Sans:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow: #ffe410;
+      --black: #0e0e0e;
+      --dark-card: #151518;
+      --border: rgba(255, 255, 255, 0.12);
+      --text-white: #ffffff;
+      --text-muted: #a1a1aa;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--black);
+      color: var(--text-white);
+      font-family: 'Inter', sans-serif;
+      padding: 50px 24px 100px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 36px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: var(--yellow);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    .desc {
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 228, 16, 0.12);
+      border: 1px solid rgba(255, 228, 16, 0.35);
+      padding: 8px 18px;
+      border-radius: 9999px;
+      color: var(--yellow);
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      margin: 40px 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 24px;
+      background: var(--yellow);
+      border-radius: 2px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 32px;
+      margin-bottom: 60px;
+    }
+
+    .logo-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .logo-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 228, 16, 0.5);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+    }
+
+    .canvas-box {
+      height: 340px;
+      background: #09090b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-body {
+      padding: 26px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-tag {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      color: var(--yellow);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 21px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      flex: 1;
+    }
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      font-size: 11px;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: #e4e4e7;
+    }
+
+    /* TYPOGRAPHY DESIGNS */
+
+    /* Style 4A: Uniform Condensed All-White with Yellow Dot */
+    .wordmark-4a {
+      font-family: 'Anton', 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 0.92;
+      text-align: left;
+    }
+
+    .wordmark-4a .w-not {
+      font-size: 52px;
+      color: #ffffff;
+      display: block;
+    }
+
+    .wordmark-4a .w-name {
+      font-size: 52px;
+      color: #ffffff;
+      display: block;
+    }
+
+    .wordmark-4a .w-surname {
+      font-size: 52px;
+      color: #ffffff;
+      display: block;
+    }
+
+    .dot-square {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background-color: var(--yellow);
+      margin-left: 4px;
+      vertical-align: baseline;
+    }
+
+    /* Style 4B: High-Contrast Electric Yellow 'NOT' */
+    .wordmark-4b {
+      font-family: 'Anton', 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 0.92;
+      text-align: left;
+    }
+
+    .wordmark-4b .w-not {
+      font-size: 56px;
+      color: var(--yellow);
+      display: block;
+      letter-spacing: 0.06em;
+      text-shadow: 0 0 24px rgba(255, 228, 16, 0.25);
+    }
+
+    .wordmark-4b .w-name {
+      font-size: 52px;
+      color: #ffffff;
+      display: block;
+    }
+
+    .wordmark-4b .w-surname {
+      font-size: 52px;
+      color: #ffffff;
+      display: block;
+    }
+
+    /* Style 4C: Streetwear Box Badge for 'NOT' */
+    .wordmark-4c {
+      font-family: 'Anton', 'Oswald', sans-serif;
+      text-transform: uppercase;
+      text-align: left;
+    }
+
+    .badge-pill-not {
+      display: inline-block;
+      background: var(--yellow);
+      color: #0e0e0e;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      font-size: 15px;
+      letter-spacing: 0.12em;
+      padding: 4px 14px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .wordmark-4c .w-name {
+      font-size: 50px;
+      color: #ffffff;
+      line-height: 0.92;
+      display: block;
+      letter-spacing: 0.04em;
+    }
+
+    .wordmark-4c .w-surname {
+      font-size: 50px;
+      color: #ffffff;
+      line-height: 0.92;
+      display: block;
+      letter-spacing: 0.04em;
+    }
+
+    /* Style 4D: 2-Line High-Impact Lockup */
+    .wordmark-4d {
+      font-family: 'Anton', 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 0.94;
+      text-align: center;
+    }
+
+    .wordmark-4d .line-1 {
+      font-size: 46px;
+      color: #ffffff;
+      display: block;
+    }
+
+    .wordmark-4d .line-1 .not-highlight {
+      color: var(--yellow);
+      margin-right: 6px;
+    }
+
+    .wordmark-4d .line-2 {
+      font-size: 56px;
+      color: #ffffff;
+      display: block;
+      letter-spacing: 0.06em;
+    }
+
+    /* Reference Card */
+    .original-ref {
+      opacity: 0.75;
+      filter: grayscale(0.2);
+    }
+    .original-ref img {
+      max-height: 240px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="tag">Selection Refinement</div>
+      <h1>OPTION 04 + "NOT" VARIATIONS</h1>
+      <p class="desc">
+        Based on your selection of <strong>Option 04 (Condensed Bold Wordmark)</strong>, here are 4 tailored variations incorporating <strong>"NOT"</strong> in clean, modern typography.
+      </p>
+      <div class="status-badge">
+        <span>🔒 Live website untouched · Previewing options</span>
+      </div>
+    </header>
+
+    <h2 class="section-title">Select Your Preferred "NOT" Style</h2>
+
+    <div class="grid">
+      <!-- Variation 4B: Yellow Accent NOT -->
+      <div class="logo-card">
+        <div class="canvas-box">
+          <div class="wordmark-4b">
+            <span class="w-not">NOT</span>
+            <span class="w-name">AMANTHA</span>
+            <span class="w-surname">PERERA<span class="dot-square"></span></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Variation 4B · (Recommended)</div>
+          <h3 class="card-title">Yellow Accent "NOT"</h3>
+          <p class="card-text">
+            Highlights <strong>"NOT"</strong> in electric brand yellow (#FFE410) with stacked condensed white text and yellow accent square. Directly connects to <code>@notamanthaperera</code>.
+          </p>
+          <div class="pill-group">
+            <span class="pill">High Contrast</span>
+            <span class="pill">Brand Signature</span>
+            <span class="pill">Vector SVG</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Variation 4A: Uniform All-White Stack -->
+      <div class="logo-card">
+        <div class="canvas-box">
+          <div class="wordmark-4a">
+            <span class="w-not">NOT</span>
+            <span class="w-name">AMANTHA</span>
+            <span class="w-surname">PERERA<span class="dot-square"></span></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Variation 4A</div>
+          <h3 class="card-title">Pure Monolithic Stack</h3>
+          <p class="card-text">
+            Solid, ultra-clean uniform condensed white typography for "NOT AMANTHA PERERA", finished with the signature yellow accent dot.
+          </p>
+          <div class="pill-group">
+            <span class="pill">Monolithic</span>
+            <span class="pill">Editorial</span>
+            <span class="pill">Pure Typography</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Variation 4C: Box Badge 'NOT' -->
+      <div class="logo-card">
+        <div class="canvas-box">
+          <div class="wordmark-4c">
+            <div><span class="badge-pill-not">NOT</span></div>
+            <span class="w-name">AMANTHA</span>
+            <span class="w-surname">PERERA<span class="dot-square"></span></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Variation 4C</div>
+          <h3 class="card-title">Streetwear Box Tag</h3>
+          <p class="card-text">
+            Features "NOT" inside an electric yellow pill badge, sitting atop the bold condensed "AMANTHA PERERA" letterforms.
+          </p>
+          <div class="pill-group">
+            <span class="pill">Streetwear</span>
+            <span class="pill">Badge Lockup</span>
+            <span class="pill">Modern Creator</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Variation 4D: 2-Line Dynamic Lockup -->
+      <div class="logo-card">
+        <div class="canvas-box">
+          <div class="wordmark-4d">
+            <span class="line-1"><span class="not-highlight">NOT</span> AMANTHA</span>
+            <span class="line-2">PERERA<span class="dot-square"></span></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Variation 4D</div>
+          <h3 class="card-title">Two-Line Wide Lockup</h3>
+          <p class="card-text">
+            A balanced 2-line structure ("NOT AMANTHA" / "PERERA.") ideal for website top headers, profile banners, and horizontal navigation.
+          </p>
+          <div class="pill-group">
+            <span class="pill">Horizontal Balance</span>
+            <span class="pill">Header Ready</span>
+            <span class="pill">Clean</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
