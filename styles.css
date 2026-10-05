@@ -2420,6 +2420,14 @@ body.is-loaded .p01-slide .hero-photo {
   gap: 60px;
 }
 
+.p24-desktop-contact-block {
+  display: block;
+}
+
+.p24-mobile-footer-channels {
+  display: none;
+}
+
 .p24-direct-contact {
   display: flex;
   flex-direction: column;
@@ -4436,53 +4444,125 @@ body.is-loaded .p01-slide .hero-photo {
     gap: 8px;
   }
 
-  /* Page 24: Contact Details & Seamless Email */
-  .p24-direct-contact {
-    margin-bottom: 18px;
+  /* ==========================================================================
+     Page 24 Mobile: Streamlined WhatsApp Collaboration Experience
+     ========================================================================== */
+  #page-24 {
+    padding: 56px 14px 76px;
+    min-height: calc(100dvh - 52px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .direct-contact-link {
-    font-size: clamp(1.2rem, 5.5vw, 1.6rem);
-    text-underline-offset: 5px;
-  }
-
-  .direct-contact-link.email-link {
-    white-space: nowrap !important;
-    word-break: normal !important;
-    font-size: clamp(0.92rem, 4.3vw, 1.35rem) !important;
-    letter-spacing: -0.015em;
-    display: inline-block;
-    max-width: 100%;
-  }
-
-  .p24-links-grid {
-    grid-template-columns: 1fr 1fr;
+  .p24-layout {
+    display: flex;
+    flex-direction: column;
     gap: 8px;
-    margin-bottom: 16px;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
   }
 
-  .p24-social-item {
-    padding: 10px 12px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.04);
+  .p24-text-col {
+    text-align: center;
+    width: 100%;
+  }
+
+  .p24-text-col .deck-eyebrow {
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    margin-bottom: 2px;
+  }
+
+  .p24-heading {
+    font-size: clamp(1.4rem, 5.4vw, 1.8rem);
+    line-height: 1.15;
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+  }
+
+  /* Hide bulky desktop-only contact list on mobile */
+  .p24-desktop-contact-block {
+    display: none !important;
   }
 
   .p24-media-col {
     max-width: 100%;
-    margin: 16px 0 0;
+    margin: 0;
     width: 100%;
   }
 
+  /* Ultra-sleek WhatsApp Collaboration Card on Mobile */
   .whatsapp-collab-card {
-    border-radius: 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(37, 211, 102, 0.1);
   }
 
   .wa-card-stage-banner {
-    height: 82px;
+    height: 68px;
+  }
+
+  .wa-stage-badge {
+    top: 6px;
+    left: 8px;
+    padding: 3px 8px;
+    font-size: 8.5px;
   }
 
   .wa-card-body {
-    padding: 12px 14px 16px;
+    padding: 10px 14px 14px;
+  }
+
+  .wa-creator-row {
+    margin-top: -26px;
+    margin-bottom: 10px;
+  }
+
+  .wa-avatar-box {
+    width: 40px;
+    height: 40px;
+    border-width: 2.5px;
+  }
+
+  .wa-online-indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .wa-creator-meta {
+    margin-left: 8px;
+  }
+
+  .wa-creator-name {
+    font-size: 13.5px;
+  }
+
+  .wa-creator-sub {
+    font-size: 10px;
+  }
+
+  .wa-pill-channel {
+    padding: 3px 8px;
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .wa-form-group {
+    margin-bottom: 8px;
+  }
+
+  .wa-label {
+    font-size: 9.5px;
+    margin-bottom: 3px;
+  }
+
+  .wa-input {
+    height: 38px;
+    font-size: 12px;
+    padding: 0 10px;
+    border-radius: 8px;
   }
 
   .wa-chips-grid {
@@ -4491,17 +4571,118 @@ body.is-loaded .p01-slide .hero-photo {
   }
 
   .wa-chip {
-    padding: 6px 8px;
-    font-size: 10.5px;
+    padding: 6px 6px;
+    font-size: 10px;
+    min-height: 30px;
+    border-radius: 6px;
   }
 
-  .contact-photo-wrap img {
-    border-radius: 16px;
-    max-height: none;
-    height: auto;
+  .wa-chips-row {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .wa-chips-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .wa-chip-sm {
+    padding: 4px 8px;
+    font-size: 9.5px;
+    min-height: 26px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .wa-textarea {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+    min-height: 48px;
+  }
+
+  .btn-wa-action {
+    height: 42px;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    border-radius: 9px;
+    margin-top: 3px;
+  }
+
+  .wa-footer-line {
+    font-size: 10px;
+    margin-top: 6px;
+  }
+
+  /* Streamlined Mobile Footer Channels below the WhatsApp card */
+  .p24-mobile-footer-channels {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    margin-top: 10px;
     width: 100%;
-    object-fit: contain;
-    display: block;
+  }
+
+  .p24-mob-email-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 11.5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .p24-mob-email-pill:hover,
+  .p24-mob-email-pill:active {
+    background: rgba(255, 228, 16, 0.12);
+    border-color: rgba(255, 228, 16, 0.4);
+    color: var(--color-yellow);
+  }
+
+  .p24-mob-social-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .p24-mob-social-pill {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--color-text-muted-dark);
+    padding: 4px 9px;
+    border-radius: 9999px;
+    font-size: 10.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .p24-mob-social-pill:hover,
+  .p24-mob-social-pill:active {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .p24-mob-signature {
+    font-size: 10.5px;
+    color: var(--color-text-dim-dark);
+    text-align: center;
+    letter-spacing: 0.03em;
   }
 
   /* Floating Deck Bar Mobile Adjustment */
@@ -4584,6 +4765,10 @@ body.is-loaded .p01-slide .hero-photo {
 
   .p22-card-desc {
     font-size: 0.74rem;
+  }
+
+  #page-24 {
+    padding: 54px 12px 74px !important;
   }
 }
 
