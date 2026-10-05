@@ -334,6 +334,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Inline track play button triggers Page 16 video
+  const btnPlayChandi = document.getElementById('btnPlayChandiVideo');
+  const videoP16 = document.getElementById('videoPage16');
+  if (btnPlayChandi && videoP16) {
+    btnPlayChandi.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (videoP16.paused) {
+        videoP16.play().catch(() => {});
+      } else {
+        videoP16.pause();
+      }
+    });
+
+    videoP16.addEventListener('play', () => {
+      btnPlayChandi.classList.add('is-playing');
+    });
+
+    videoP16.addEventListener('pause', () => {
+      btnPlayChandi.classList.remove('is-playing');
+    });
+  }
+
   // 7. Auto hide/reveal top bar on scroll (desktop only)
   window.addEventListener('scroll', () => {
     if (window.innerWidth <= 820) {
