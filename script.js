@@ -340,10 +340,15 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btnPlayChandi && videoP16) {
     btnPlayChandi.addEventListener('click', (e) => {
       e.preventDefault();
-      if (videoP16.paused) {
-        videoP16.play().catch(() => {});
-      } else {
-        videoP16.pause();
+      videoP16.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      videoP16.muted = false; // Unmute on user interaction
+      videoP16.play().catch(() => {});
+    });
+
+    btnPlayChandi.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        btnPlayChandi.click();
       }
     });
 
@@ -573,6 +578,41 @@ document.addEventListener('DOMContentLoaded', () => {
         el._counterData = data;
         counterObserver.observe(el);
       }
+    });
+  }
+
+  // 12. VIDEO AUTOPLAY ON SCROLL (IntersectionObserver)
+  // Videos play muted when visible, pause when scrolled away
+  if ('IntersectionObserver' in window) {
+    const inlineVideos = document.querySelectorAll('.deck-inline-video');
+
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          // Play when visible (muted for autoplay policy)
+          video.muted = true;
+          video.play().catch(() => {});
+        } else {
+          // Pause when not visible to save resources
+          video.pause();
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.35
+    });
+
+    inlineVideos.forEach((video) => {
+      videoObserver.observe(video);
+    });
+
+    // Allow unmute on user interaction (click/tap on video)
+    inlineVideos.forEach((video) => {
+      video.addEventListener('click', () => {
+        video.muted = !video.muted;
+      });
     });
   }
 

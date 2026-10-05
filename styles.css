@@ -2736,14 +2736,24 @@ body.is-loaded .p01-slide .hero-photo {
   }
 
   .deck-top-nav {
-    padding: 8px 14px;
-    height: 48px;
+    padding: 0 max(16px, env(safe-area-inset-left)) 0 max(16px, env(safe-area-inset-right));
+    padding-top: env(safe-area-inset-top, 0px);
+    height: calc(56px + env(safe-area-inset-top, 0px));
     display: flex;
     align-items: center;
-    background: rgba(14, 14, 14, 0.94);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: linear-gradient(180deg, rgba(9, 9, 11, 0.95) 0%, rgba(14, 14, 17, 0.88) 100%);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border-bottom: 1px solid rgba(255, 228, 16, 0.12);
     transform: none !important;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  }
+
+  .top-nav-inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .brand-sub {
@@ -2751,34 +2761,93 @@ body.is-loaded .p01-slide .hero-photo {
   }
 
   .brand-name {
-    font-size: 13px;
-    letter-spacing: 0.04em;
+    font-family: 'Anton', 'Oswald', var(--font-heading);
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-dot-square {
+    width: 5px;
+    height: 5px;
+    margin-left: 4px;
+    background-color: var(--color-yellow);
+    box-shadow: 0 0 8px rgba(255, 228, 16, 0.6);
   }
 
   .nav-actions {
+    display: flex;
+    align-items: center;
     gap: 8px;
   }
 
   .btn-toc {
-    padding: 5px 12px;
-    font-size: 12px;
-    gap: 5px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  .btn-toc:active {
+    transform: scale(0.92);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .btn-toc span {
+    display: none;
+  }
+
+  .btn-toc svg {
+    width: 16px;
+    height: 16px;
+    stroke: #ffffff;
   }
 
   .btn-collaborate {
-    padding: 5px 14px;
-    font-size: 12px;
+    height: 36px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, var(--color-yellow) 0%, #ffd000 100%);
+    color: #0e0e0e;
+    box-shadow: 0 2px 12px rgba(255, 228, 16, 0.3), 0 1px 4px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    transition: transform 0.15s ease, background 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .btn-collaborate:active {
+    transform: scale(0.93);
+    background: linear-gradient(135deg, #ffd000 0%, var(--color-yellow) 100%);
+    box-shadow: 0 1px 6px rgba(255, 228, 16, 0.5);
   }
 
   /* Slide Base Setup */
   .deck-slide {
-    min-height: calc(100vh - 48px);
-    min-height: calc(100dvh - 48px);
+    min-height: calc(100vh - 56px);
+    min-height: calc(100dvh - 56px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 62px 16px 86px;
-    scroll-margin-top: 48px;
+    padding: 68px 16px 86px;
+    scroll-margin-top: 56px;
     overflow-x: hidden;
     box-sizing: border-box;
     scroll-snap-align: start;
@@ -2786,7 +2855,7 @@ body.is-loaded .p01-slide .hero-photo {
   }
 
   .p01-slide {
-    padding-top: 72px;
+    padding-top: 76px;
   }
 
   /* Hide floating static page numbers on mobile — the floating bottom dock already has '05 / 24' */
@@ -3406,9 +3475,9 @@ body.is-loaded .p01-slide .hero-photo {
     display: block;
   }
 
-  /* Page 08: Case Study Images */
+  /* Page 08: Case Study Images & Video */
   .p08-media-col {
-    max-width: 340px;
+    max-width: 320px;
     margin: 12px auto 0;
     width: 100%;
   }
@@ -3420,6 +3489,24 @@ body.is-loaded .p01-slide .hero-photo {
     width: 100%;
     object-fit: contain;
     display: block;
+  }
+
+  .p08-media-col .video-card-wrap,
+  .p16-media-col .video-card-wrap {
+    max-width: 290px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6);
+  }
+
+  .p08-media-col .deck-inline-video,
+  .p16-media-col .deck-inline-video {
+    width: 100%;
+    max-height: 48vh;
+    border-radius: 18px;
+    object-fit: cover;
+    aspect-ratio: 9 / 16;
   }
 
   /* Page 09: Dinidu Results - Compact Mobile Single Screen */
@@ -4057,22 +4144,29 @@ body.is-loaded .p01-slide .hero-photo {
 /* Extra Small Phones (max-width: 480px) */
 @media (max-width: 480px) {
   .deck-top-nav {
-    padding: 8px 12px;
+    padding: 0 max(12px, env(safe-area-inset-left)) 0 max(12px, env(safe-area-inset-right));
+    padding-top: env(safe-area-inset-top, 0px);
+    height: calc(52px + env(safe-area-inset-top, 0px));
   }
 
   .brand-name {
-    font-size: 12px;
+    font-size: 13.5px;
+    letter-spacing: 0.03em;
+  }
+
+  .nav-actions {
+    gap: 6px;
   }
 
   .btn-toc {
-    padding: 5px 10px;
-    font-size: 11px;
-    gap: 4px;
+    width: 32px;
+    height: 32px;
   }
 
   .btn-collaborate {
-    padding: 5px 10px;
-    font-size: 11px;
+    height: 32px;
+    padding: 0 12px;
+    font-size: 10.5px;
   }
 
   .deck-slide {
