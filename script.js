@@ -616,6 +616,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 14. WHATSAPP COLLABORATION FORM HANDLER (+94 76 152 1091)
+  const waForm = document.getElementById('whatsappCollabForm');
+  if (waForm) {
+    waForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const brandName = document.getElementById('waBrandName')?.value.trim() || 'Not specified';
+      const collabType = document.getElementById('waCollabType')?.value || 'Brand Campaign';
+      const budget = document.getElementById('waBudget')?.value || 'Flexible / Let\'s Discuss';
+      const message = document.getElementById('waMessage')?.value.trim() || '';
+
+      const waText = 
+`👋 Hi Amantha! I reviewed your 2026 Creator Deck and would love to collaborate:
+
+👤 Name / Brand: ${brandName}
+🎯 Project Type: ${collabType}
+💰 Budget Estimate: ${budget}
+
+📝 Campaign Brief / Details:
+${message}
+
+(Inquiry sent via notamanthaperera.online)`;
+
+      const waUrl = `https://wa.me/94761521091?text=${encodeURIComponent(waText)}`;
+      window.open(waUrl, '_blank');
+      showToast('Opening WhatsApp with your brief... 💬');
+    });
+  }
+
   console.log('Amantha Perera Creator Deck Website initialized with 24 pages.');
 });
 
