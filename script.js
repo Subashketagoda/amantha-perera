@@ -241,8 +241,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 7. Auto hide/reveal top bar on scroll
+  // 7. Auto hide/reveal top bar on scroll (desktop only)
   window.addEventListener('scroll', () => {
+    if (window.innerWidth <= 820) {
+      if (topNav) topNav.style.transform = 'translateY(0)';
+      return;
+    }
     const currentScrollY = window.scrollY;
     if (topNav) {
       if (currentScrollY > 100 && currentScrollY > lastScrollY) {

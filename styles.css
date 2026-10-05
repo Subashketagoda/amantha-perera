@@ -35,6 +35,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -272,6 +273,7 @@ a {
 .deck-slide {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -279,6 +281,8 @@ a {
   box-sizing: border-box;
   padding: 70px 48px 48px;
   scroll-margin-top: 60px;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
 }
 
 .slide-content {
@@ -2309,7 +2313,14 @@ a {
   }
 
   .deck-top-nav {
-    padding: 10px 16px;
+    padding: 8px 14px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    background: rgba(14, 14, 14, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transform: none !important;
   }
 
   .brand-sub {
@@ -2326,26 +2337,29 @@ a {
   }
 
   .btn-toc {
-    padding: 6px 12px;
+    padding: 5px 12px;
     font-size: 12px;
-    gap: 6px;
+    gap: 5px;
   }
 
   .btn-collaborate {
-    padding: 6px 14px;
+    padding: 5px 14px;
     font-size: 12px;
   }
 
   /* Slide Base Setup */
   .deck-slide {
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 48px);
+    min-height: calc(100dvh - 48px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 72px 16px 96px;
-    scroll-margin-top: 60px;
+    padding: 62px 16px 86px;
+    scroll-margin-top: 48px;
     overflow-x: hidden;
     box-sizing: border-box;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
   }
 
   .p01-slide {
@@ -2451,159 +2465,436 @@ a {
     gap: 24px;
   }
 
-  /* Page 02: Stats */
+  /* Page 02: Not Just An Influencer */
+  .p02-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .p02-heading {
+    margin-bottom: 8px;
+  }
+
+  .p02-body-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
   .p02-stats-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin: 20px 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 6px 0 12px;
   }
 
   .p02-stat-item {
     border-top: 2px solid #0e0e0e;
-    padding-top: 10px;
+    padding-top: 6px;
   }
 
   .p02-stat-item .stat-num {
-    font-size: clamp(2.2rem, 7.5vw, 2.8rem);
+    font-size: clamp(1.2rem, 4.4vw, 1.5rem);
     line-height: 1;
+    margin-bottom: 2px;
   }
 
   .p02-stat-item .stat-lbl {
-    font-size: 12px;
-    line-height: 1.3;
+    font-size: 9px;
+    line-height: 1.2;
   }
 
   .p02-media-col .rounded-card-image img {
-    max-height: 340px;
+    max-height: 170px;
     object-fit: cover;
+    object-position: center 25%;
     width: 100%;
-    border-radius: 16px;
-  }
-
-  /* Page 03: The Numbers */
-  .p03-highlight {
-    padding: 20px 16px;
-    border-radius: 16px;
-    margin-bottom: 20px;
-  }
-
-  .p03-big-number {
-    font-size: clamp(3rem, 11vw, 4.2rem);
-    line-height: 1;
-  }
-
-  .p03-table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-
-  .p03-table {
-    min-width: 320px;
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .p03-table th,
-  .p03-table td {
-    padding: 8px 4px;
-    font-size: 11px;
-    white-space: nowrap;
-  }
-
-  .p03-table th:first-child,
-  .p03-table td:first-child {
-    padding-left: 0;
-  }
-
-  .p03-table td:nth-child(2) {
-    font-size: 13px;
-    font-weight: 800;
-  }
-
-  .p03-cards-row {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .p03-stat-card {
-    padding: 16px;
     border-radius: 14px;
   }
 
-  .p03-stat-card .card-big-num {
-    font-size: clamp(1.8rem, 6vw, 2.4rem);
-  }
-
-  /* Page 04: Demographics */
-  .p04-cols-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .p04-group-title {
-    font-size: 12px;
+  /* Page 03: The Numbers - Fully responsive, single-screen mobile layout */
+  .p03-heading {
     margin-bottom: 12px;
   }
 
-  .demo-bar-row {
-    margin-bottom: 10px;
-  }
-
-  /* Page 05: More Than A Content Creator - Compact Sleek Cards */
-  .p05-cards-grid {
-    grid-template-columns: 1fr;
+  .p03-grid {
+    display: flex;
+    flex-direction: column;
     gap: 12px;
   }
 
-  .p05-card {
-    grid-template-columns: 76px 1fr;
-    gap: 12px;
-    padding: 12px 14px;
+  .p03-left-card {
+    padding: 14px 16px;
     border-radius: 14px;
+    background: var(--color-dark-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    gap: 12px;
   }
 
-  .p05-card-thumb {
-    width: 76px;
-    height: 76px;
+  .p03-left-top {
+    flex: 1;
+  }
+
+  .p03-left-card .deck-eyebrow {
+    font-size: 9.5px;
+    margin-bottom: 2px;
+    letter-spacing: 0.12em;
+  }
+
+  .p03-huge-stat {
+    font-size: clamp(2.4rem, 8.5vw, 3.2rem);
+    line-height: 0.95;
+    margin: 2px 0 4px;
+  }
+
+  .p03-left-desc {
+    font-size: 11.5px;
+    line-height: 1.3;
+    color: var(--color-text-muted-dark);
+    margin: 0;
+  }
+
+  .p03-left-desc br {
+    display: none;
+  }
+
+  .p03-engagement-badge {
+    margin-top: 0;
+    white-space: normal;
+    text-align: center;
+    padding: 6px 10px;
     border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .p05-card-role {
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    margin-bottom: 3px;
-  }
-
-  .p05-card-title {
-    font-size: 1.05rem;
-    line-height: 1.2;
-    margin-bottom: 4px;
-  }
-
-  .p05-card-desc {
-    font-size: 0.82rem;
-    line-height: 1.35;
-    margin-bottom: 6px;
-  }
-
-  .p05-card-link {
+    background: rgba(255, 230, 0, 0.1);
+    border: 1px solid rgba(255, 230, 0, 0.22);
+    color: var(--color-yellow);
     font-size: 11px;
+    font-weight: 800;
+    line-height: 1.2;
+    max-width: 100px;
+  }
+
+  .p03-right-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .p03-table-wrap {
+    overflow-x: hidden;
+    margin-bottom: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 4px 6px;
+    box-sizing: border-box;
+  }
+
+  .p03-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+  .p03-table th {
+    font-size: 8.5px;
+    letter-spacing: 0.06em;
+    padding: 6px 2px;
+    color: var(--color-text-dim-dark);
+    text-align: center;
     font-weight: 700;
   }
 
-  /* Page 06: Brands Timeline */
-  .p06-brands-timeline {
-    grid-template-columns: 1fr;
-    gap: 12px;
+  .p03-table th:first-child {
+    width: 25%;
+    text-align: left;
+    padding-left: 4px;
   }
 
-  .brand-timeline-card {
-    padding: 14px;
-    border-radius: 14px;
+  .p03-table th:nth-child(2) {
+    width: 21%;
+  }
+
+  .p03-table th:nth-child(3) {
+    width: 21%;
+  }
+
+  .p03-table th:nth-child(4) {
+    width: 16%;
+  }
+
+  .p03-table th:nth-child(5) {
+    width: 17%;
+  }
+
+  .p03-table td {
+    padding: 8px 2px;
+    font-size: 10px;
+    text-align: center;
+    white-space: nowrap;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .p03-table .platform-name {
+    font-size: 11.5px !important;
+    font-weight: 800 !important;
+    text-align: left;
+    padding-left: 4px;
+  }
+
+  .p03-table .platform-name .platform-link {
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.25);
+    text-underline-offset: 2px;
+  }
+
+  .p03-table .highlight-val {
+    font-size: 12px !important;
+    font-weight: 800;
+    color: var(--color-yellow) !important;
+  }
+
+  .p03-table td:nth-child(3),
+  .p03-table td:nth-child(4),
+  .p03-table td:nth-child(5) {
+    font-size: 10px;
+    color: #e4e4e7;
+    font-weight: 600;
+  }
+
+  .p03-cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 2px;
+  }
+
+  .p03-mini-card {
+    padding: 10px 6px;
+    border-radius: 12px;
+    background: var(--color-dark-card);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .p03-mini-card .mini-card-num {
+    font-size: clamp(1.15rem, 4.2vw, 1.4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 2px;
+    color: #ffffff;
+  }
+
+  .p03-mini-card .mini-card-lbl {
+    font-size: 9px;
+    line-height: 1.22;
+    color: var(--color-text-muted-dark);
+  }
+
+  .p03-footnote {
+    margin-top: 8px;
+    font-size: 9px;
+    line-height: 1.35;
+    color: var(--color-text-dim-dark);
+    text-align: center;
+  }
+
+  /* Page 04: Demographics - Compact 2-column mobile layout */
+  .p04-heading {
+    margin-bottom: 8px;
+  }
+
+  .p04-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.35;
+    margin-bottom: 14px;
+  }
+
+  .p04-cols-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 14px;
+  }
+
+  .p04-col:first-child {
+    grid-column: 1 / -1;
+    background: rgba(0, 0, 0, 0.03);
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .p04-col:first-child .p04-col-title {
+    margin-bottom: 6px;
+  }
+
+  .p04-col:first-child .p04-bar-item {
+    margin-bottom: 6px;
+  }
+
+  .p04-col:first-child .p04-bar-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .p04-col-title {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+    color: #18181b;
+  }
+
+  .p04-bar-item {
+    margin-bottom: 8px;
+  }
+
+  .p04-bar-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .p04-bar-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+  }
+
+  .p04-lbl {
+    font-size: 11px;
+    font-weight: 600;
+    color: #3f3f46;
+  }
+
+  .p04-val {
+    font-size: 11px;
+    font-weight: 700;
+    color: #09090b;
+  }
+
+  .p04-progress-track {
+    height: 4px;
+    background: #e4e4e7;
+    border-radius: 2px;
+  }
+
+  /* Page 05: More Than A Content Creator - 2-Column Responsive Grid */
+  .p05-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .p05-card {
+    display: flex;
+    flex-direction: column;
+    padding: 6px 8px;
+    border-radius: 10px;
+    background: var(--color-dark-card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .p05-card-thumb {
+    width: 100%;
+    height: 48px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 4px;
+  }
+
+  .p05-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .p05-card-tag {
+    font-size: 7.5px;
+    letter-spacing: 0.08em;
+    margin-bottom: 1px;
+    color: var(--color-yellow);
+    font-weight: 800;
+  }
+
+  .p05-card-title {
+    font-size: 0.86rem;
+    line-height: 1.15;
+    margin-bottom: 2px;
+    color: #ffffff;
+  }
+
+  .p05-card-desc {
+    font-size: 8.5px;
+    line-height: 1.2;
+    color: var(--color-text-muted-dark);
+    margin-bottom: 3px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .p05-card-link {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--color-yellow);
+  }
+
+  /* Page 06: Brands Timeline - 2 Columns Compact */
+  .p06-heading {
+    margin-bottom: 8px;
+  }
+
+  .p06-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+
+  .p06-btn-row {
+    margin-bottom: 12px;
+  }
+
+  .p06-btn-row .btn-black-pill {
+    min-height: 40px;
+    padding: 8px 16px;
+    font-size: 12.5px;
+    margin-bottom: 0;
+  }
+
+  .p06-brands-timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .p06-timeline-card {
+    padding: 8px 10px;
+    border-radius: 12px;
+    min-height: auto;
+    justify-content: flex-start;
+  }
+
+  .p06-timeline-card.card-active-dark {
+    grid-column: span 2;
+  }
+
+  .p06-timeline-card .card-tag {
+    font-size: 8px;
+    margin-bottom: 2px;
+  }
+
+  .p06-timeline-card .card-main-title {
+    font-size: 1rem;
+    line-height: 1.1;
+    margin-bottom: 2px;
+  }
+
+  .p06-timeline-card .card-sub-title {
+    font-size: 8.5px;
+    line-height: 1.2;
   }
 
   /* Global Action Buttons on Mobile: Full-width, high-contrast, easy tap */
@@ -2630,8 +2921,29 @@ a {
     transform: scale(0.98);
   }
 
-  /* Page 07 & 08: Case Study Images */
-  .p07-media-col img,
+  /* Page 07: The Agency - Text First, Photo Below */
+  .p07-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .p07-content-col {
+    order: 1;
+  }
+
+  .p07-photo-col {
+    order: 2;
+  }
+
+  .p07-standing-photo {
+    max-height: 250px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 16px;
+    margin-top: 8px;
+  }
+
+  /* Page 08: Case Study Images */
   .p08-media-col img {
     border-radius: 16px;
     max-height: 360px;
@@ -2639,71 +2951,261 @@ a {
     width: 100%;
   }
 
-  /* Page 09: Metrics Grid */
+  /* Page 09: Dinidu Results - Compact Mobile Single Screen */
+  .p09-huge-stat-block {
+    margin-bottom: 10px;
+  }
+
+  .p09-huge-stat-block .huge-number {
+    font-size: clamp(2.4rem, 8.5vw, 3.2rem);
+    line-height: 0.95;
+    margin-bottom: 2px;
+  }
+
+  .p09-huge-stat-block .huge-label {
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    color: #52525b;
+  }
+
   .p09-metrics-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin: 20px 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin: 8px 0 10px;
   }
 
-  .p09-metric-card {
-    padding: 16px 14px;
-    border-radius: 14px;
+  .p09-metric-cell {
+    border-top: 2px solid #0e0e0e;
+    padding-top: 6px;
   }
 
-  .p09-metric-val {
-    font-size: clamp(2rem, 7vw, 2.5rem);
+  .p09-metric-cell .cell-num {
+    font-size: clamp(1.15rem, 4.4vw, 1.45rem);
     line-height: 1;
+    margin-bottom: 2px;
   }
 
-  .p09-metric-lbl {
-    font-size: 11px;
+  .p09-metric-cell .cell-lbl {
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    color: #71717a;
+  }
+
+  .p09-summary-text {
+    font-size: 0.82rem;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+
+  .p09-media-col {
+    margin-top: 4px;
+  }
+
+  .p09-media-col .ig-mockup-wrap {
+    max-height: 140px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: block;
+  }
+
+  .p09-media-col img {
+    max-height: 140px;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .p09-footnote {
+    font-size: 8.5px;
+    margin-top: 6px;
+  }
+
+  /* Page 10: Case Study 02 - Driveline Street Fight */
+  .p10-heading {
+    margin-bottom: 8px;
+  }
+
+  .p10-desc {
+    font-size: 0.82rem;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+
+  .p10-timeline-pills {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .p10-timeline-pills .timeline-pill {
+    flex: 1;
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  .p10-quote {
+    font-size: 10.5px;
     line-height: 1.3;
+    margin-bottom: 8px;
+    padding-left: 8px;
+    border-left: 2px solid #0e0e0e;
   }
 
-  /* Page 10: Quotes & Proof */
-  .p10-media-col img {
-    border-radius: 16px;
-    max-height: 360px;
+  .p10-btn-row {
+    margin-bottom: 8px;
+  }
+
+  .p10-btn-row .btn-black-pill {
+    min-height: 38px;
+    padding: 6px 14px;
+    font-size: 11.5px;
+    margin-bottom: 0;
+  }
+
+  .p10-media-col {
+    margin-top: 4px;
+  }
+
+  .p10-preview-box {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .p10-image-crop {
+    max-height: 110px;
+    overflow: hidden;
+  }
+
+  .p10-image-crop img {
+    max-height: 110px;
     object-fit: cover;
     width: 100%;
   }
 
-  /* Page 11: 4 Value Pillars */
+  .p10-reel-stats-box {
+    padding: 6px 8px;
+  }
+
+  .p10-reel-stats-box .reel-stats-header {
+    font-size: 8.5px;
+    margin-bottom: 2px;
+  }
+
+  .reel-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .reel-stats-grid .stat-unit .stat-val {
+    font-size: 1.05rem;
+    line-height: 1;
+  }
+
+  .reel-stats-grid .stat-unit .stat-lbl {
+    font-size: 8px;
+  }
+
+  /* Page 11: 4 Value Pillars & Cases */
   .p11-cards-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
   .p11-card {
-    padding: 18px 16px;
+    padding: 14px 14px;
     border-radius: 14px;
   }
 
   .p11-card-num {
     font-size: 1.15rem;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .p11-card-title {
-    font-size: 1.1rem;
-    margin-bottom: 6px;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
   }
 
   .p11-card-desc {
-    font-size: 0.85rem;
-    line-height: 1.45;
+    font-size: 0.82rem;
+    line-height: 1.4;
   }
 
-  /* Page 13: What People Say / Ventures */
+  .p11-case-card {
+    padding: 14px 14px;
+    border-radius: 14px;
+  }
+
+  .case-logo-box {
+    width: 44px;
+    height: 44px;
+  }
+
+  .case-stats-strip {
+    margin: 10px 0;
+    padding: 8px 0;
+  }
+
+  .strip-item .strip-num {
+    font-size: 1.15rem;
+  }
+
+  .strip-item .strip-lbl {
+    font-size: 10px;
+  }
+
+  .case-desc {
+    font-size: 0.82rem;
+    line-height: 1.4;
+    margin-top: 6px;
+  }
+
+  /* Page 13: What People Say / Ventures - Compact Horizontal Cards */
   .p13-cards-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
   .p13-venture-card {
-    padding: 14px;
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    gap: 12px;
+    padding: 12px 14px;
     border-radius: 14px;
+    align-items: center;
+  }
+
+  .venture-card-thumb {
+    width: 76px;
+    height: 76px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .venture-card-content {
+    padding: 0;
+  }
+
+  .venture-title {
+    font-size: 1.05rem;
+    margin-bottom: 2px;
+  }
+
+  .venture-role {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  .venture-desc {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    margin-bottom: 4px;
+  }
+
+  .venture-link {
+    font-size: 11px;
   }
 
   /* Page 14: Turnout Fullbleed Overlay Button */
@@ -2757,14 +3259,34 @@ a {
     border-radius: 12px;
   }
 
-  /* Page 17, 18, 19: Podcasts & Media */
+  /* Page 17, 18, 19: Podcasts & Media - Content First */
+  .p18-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .p18-content-col {
+    order: 1;
+  }
+
+  .p18-media-col {
+    order: 2;
+  }
+
+  .p18-media-col img {
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-top: 8px;
+  }
+
   .p18-episodes-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
   .p18-ep-card {
-    padding: 14px;
+    padding: 12px 14px;
     border-radius: 14px;
   }
 
@@ -2779,41 +3301,72 @@ a {
   }
 
   /* Page 22: Ways to Work Together — Clean 2-column App Grid */
+  .p22-heading {
+    margin-bottom: 8px;
+  }
+
   .p22-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 6px;
   }
 
-  .p22-card {
-    padding: 14px 12px;
-    border-radius: 12px;
+  .p22-service-card {
+    padding: 8px 10px;
+    border-radius: 10px;
+    min-height: auto;
   }
 
-  .p22-card-num {
-    font-size: 1.15rem;
-    margin-bottom: 4px;
+  .p22-service-card .service-num {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
   }
 
-  .p22-card-title {
-    font-size: 0.92rem;
-    line-height: 1.25;
-    margin-bottom: 4px;
+  .p22-service-card .service-title {
+    font-size: 0.88rem;
+    line-height: 1.15;
+    margin-bottom: 2px;
   }
 
-  .p22-card-desc {
-    font-size: 0.78rem;
-    line-height: 1.35;
+  .p22-service-card .service-desc {
+    font-size: 8.5px;
+    line-height: 1.2;
+    color: var(--color-text-muted-dark);
   }
 
-  /* Page 23: Pricing Packages */
+  .p22-footnote {
+    margin-top: 8px;
+    font-size: 9px;
+  }
+
+  /* Page 23: Pricing Packages - Compact Fitting */
   .p23-pricing-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
-  .p23-plan-card {
-    padding: 22px 18px;
-    border-radius: 16px;
+  .p23-pricing-card {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+
+  .pkg-price-row {
+    font-size: 1.45rem;
+    margin-bottom: 2px;
+  }
+
+  .pkg-note {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .pkg-features {
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  .pkg-features li {
+    font-size: 12px;
+    gap: 8px;
   }
 
   /* Page 24: Contact Details & Seamless Email */
