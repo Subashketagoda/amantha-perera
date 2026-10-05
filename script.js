@@ -448,5 +448,112 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 11. SCROLL-TRIGGERED NUMBER COUNTER ANIMATION
+  // Smoothly counts up metrics & statistics when scrolled into view
+  if (!isReducedMotion && 'IntersectionObserver' in window) {
+    const statSelectors = [
+      '.stat-num',
+      '.p03-huge-stat',
+      '.highlight-val',
+      '.mini-card-num',
+      '.p04-val',
+      '.huge-number',
+      '.cell-num',
+      '.p10-reel-stats-box .num',
+      '.strip-num'
+    ].join(', ');
+
+    const statElements = Array.from(document.querySelectorAll(statSelectors));
+
+    function parseStat(str) {
+      if (!str) return null;
+      str = str.trim();
+      // Skip non-scalar metrics, ranges and ratios
+      if (str.includes('→') || str.includes('/') || str.includes('–') || str.includes('-')) return null;
+      const m = str.match(/^([^\d.]*)(\d+(?:,\d+)*(?:\.\d+)?)(.*)$/);
+      if (!m) return null;
+      const prefix = m[1];
+      const numStr = m[2];
+      const suffix = m[3];
+      const hasComma = numStr.includes(',');
+      const cleanNum = numStr.replace(/,/g, '');
+      const val = parseFloat(cleanNum);
+      if (isNaN(val)) return null;
+      const decimalParts = cleanNum.split('.');
+      const decimals = decimalParts.length > 1 ? decimalParts[1].length : 0;
+      return { prefix, val, decimals, hasComma, suffix, original: str };
+    }
+
+    function formatNumber(data, curVal) {
+      let formatted = curVal.toFixed(data.decimals);
+      if (data.hasComma) {
+        const parts = formatted.split('.');
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        formatted = parts.join('.');
+      }
+      return data.prefix + formatted + data.suffix;
+    }
+
+    function animateCounter(el) {
+      if (el.dataset.counterAnimated === 'true') return;
+      const data = el._counterData || parseStat(el.textContent);
+      if (!data) return;
+
+      el.dataset.counterAnimated = 'true';
+      // Set to 0 immediately upon entering viewport so animation starts cleanly
+      el.textContent = formatNumber(data, 0);
+
+      const duration = 950; // ms for a snappy, cinematic smooth glide
+      let startTime = null;
+
+      function step(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        if (progress >= 1) {
+          el.textContent = data.original;
+          return;
+        }
+
+        // Exponential ease out for high-end feel
+        const ease = 1 - Math.pow(2, -10 * progress);
+        const curVal = data.val * ease;
+
+        el.textContent = formatNumber(data, curVal);
+        requestAnimationFrame(step);
+      }
+
+      requestAnimationFrame(step);
+
+      // Fallback guarantee to ensure final text is always 100% exact original
+      setTimeout(() => {
+        el.textContent = data.original;
+      }, duration + 100);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.15
+    });
+
+    statElements.forEach((el) => {
+      const data = parseStat(el.textContent);
+      if (data) {
+        el._counterData = data;
+        counterObserver.observe(el);
+      }
+    });
+  }
+
   console.log('Amantha Perera Creator Deck Website initialized with 24 pages.');
 });
+
