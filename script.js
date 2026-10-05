@@ -619,11 +619,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // 14. WHATSAPP COLLABORATION FORM HANDLER (+94 76 152 1091)
   const waForm = document.getElementById('whatsappCollabForm');
   if (waForm) {
+    // Interactive chips for Partnership Type
+    const typeChips = document.querySelectorAll('#typeChips .wa-chip');
+    const waCollabTypeInput = document.getElementById('waCollabType');
+    typeChips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        typeChips.forEach((c) => c.classList.remove('active'));
+        chip.classList.add('active');
+        if (waCollabTypeInput) {
+          waCollabTypeInput.value = chip.getAttribute('data-val') || chip.textContent.trim();
+        }
+      });
+    });
+
+    // Interactive chips for Budget
+    const budgetChips = document.querySelectorAll('#budgetChips .wa-chip-sm');
+    const waBudgetInput = document.getElementById('waBudget');
+    budgetChips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        budgetChips.forEach((c) => c.classList.remove('active'));
+        chip.classList.add('active');
+        if (waBudgetInput) {
+          waBudgetInput.value = chip.getAttribute('data-val') || chip.textContent.trim();
+        }
+      });
+    });
+
     waForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const brandName = document.getElementById('waBrandName')?.value.trim() || 'Not specified';
-      const collabType = document.getElementById('waCollabType')?.value || 'Brand Campaign';
-      const budget = document.getElementById('waBudget')?.value || 'Flexible / Let\'s Discuss';
+      const collabType = waCollabTypeInput?.value || 'Brand Campaign';
+      const budget = waBudgetInput?.value || 'Flexible';
       const message = document.getElementById('waMessage')?.value.trim() || '';
 
       const waText = 
