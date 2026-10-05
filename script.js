@@ -17,11 +17,90 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalBody = document.getElementById('modalBody');
   const btnCloseModal = document.getElementById('btnCloseModal');
   const topNav = document.getElementById('topNav');
+  const deckProgressBar = document.getElementById('deckProgressBar');
+  const preloader = document.getElementById('preloader');
+  const preloaderBar = document.getElementById('preloaderBar');
 
   let currentSlideIndex = 0;
   let lastScrollY = window.scrollY;
 
-  // 1. Update current slide on scroll via IntersectionObserver
+  // 0. CINEMATIC PRELOADER SEQUENCE (Requirement 1 & 2)
+  const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let preloaderFinished = false;
+  function startPreloaderSequence() {
+    if (preloaderFinished) return;
+    preloaderFinished = true;
+
+    if (!preloader) {
+      document.body.classList.remove('is-loading');
+      document.body.classList.add('is-loaded', 'js-reveal-active');
+      if (slides[0]) slides[0].classList.add('revealed');
+      return;
+    }
+
+    if (isReducedMotion) {
+      preloader.remove();
+      document.body.classList.remove('is-loading');
+      document.body.classList.add('is-loaded', 'js-reveal-active');
+      slides.forEach((s) => s.classList.add('revealed'));
+      return;
+    }
+
+    // Step 1 & 2: Logo fades in & scales (handled by CSS preloaderContentEnter)
+    // Step 3: Yellow progress line expands horizontally (duration ~850ms)
+    setTimeout(() => {
+      if (preloaderBar) {
+        preloaderBar.style.width = '100%';
+      }
+    }, 100);
+
+    // Step 4 & 5: Logo and line fade out after line completes, main site reveals
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+      document.body.classList.remove('is-loading');
+      document.body.classList.add('is-loaded', 'js-reveal-active');
+
+      if (slides[0]) {
+        slides[0].classList.add('revealed');
+      }
+
+      // Cleanup preloader from DOM after 500ms fade transition
+      setTimeout(() => {
+        if (preloader && preloader.parentNode) {
+          preloader.parentNode.removeChild(preloader);
+        }
+      }, 520);
+    }, 980);
+  }
+
+  // Start preloader sequence immediately
+  startPreloaderSequence();
+
+  // 1. SCROLL REVEAL OBSERVER (Requirement 3 & 4)
+  // Each PDF page smoothly enters viewport only once
+  if (!isReducedMotion) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.08
+    });
+
+    slides.forEach((slide) => {
+      revealObserver.observe(slide);
+    });
+  } else {
+    slides.forEach((s) => s.classList.add('revealed'));
+  }
+
+  // 2. ACTIVE SLIDE & PROGRESS BAR OBSERVER (Requirement 10 & 11)
   const observerOptions = {
     root: null,
     rootMargin: '-30% 0px -30% 0px',
@@ -35,9 +114,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isNaN(pageNum)) {
           currentSlideIndex = pageNum - 1;
           const formatted = pageNum.toString().padStart(2, '0');
-          if (currentSlideNumEl) {
+          if (currentSlideNumEl && currentSlideNumEl.textContent !== formatted) {
             currentSlideNumEl.textContent = formatted;
+            currentSlideNumEl.classList.remove('anim-change');
+            void currentSlideNumEl.offsetWidth; // Force reflow
+            currentSlideNumEl.classList.add('anim-change');
           }
+
+          // Update 2px progress bar width smoothly
+          if (deckProgressBar) {
+            const pct = (pageNum / slides.length) * 100;
+            deckProgressBar.style.width = `${pct.toFixed(2)}%`;
+          }
+
           // Highlight TOC item
           tocItems.forEach((item, idx) => {
             if (idx === currentSlideIndex) {
@@ -155,6 +244,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function openToc() {
     if (tocBackdrop) {
       tocBackdrop.classList.add('active');
+      document.body.classList.add('toc-open');
+      if (btnOpenToc) btnOpenToc.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
     }
   }
@@ -162,6 +253,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeToc() {
     if (tocBackdrop) {
       tocBackdrop.classList.remove('active');
+      document.body.classList.remove('toc-open');
+      if (btnOpenToc) btnOpenToc.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
   }
@@ -302,6 +395,57 @@ document.addEventListener('DOMContentLoaded', () => {
       toast.style.opacity = '0';
       toast.style.transform = 'translateX(-50%) translateY(10px)';
     }, 2400);
+  }
+
+  // 9. SUBTLE PARALLAX ON LARGE VISUAL PAGES (Requirement 5)
+  // Strictly clamped between -18px and 0px, desktop only
+  if (!isReducedMotion) {
+    let parallaxScheduled = false;
+
+    function applyParallax() {
+      if (window.innerWidth <= 992) {
+        parallaxScheduled = false;
+        return;
+      }
+
+      const viewportH = window.innerHeight;
+      slides.forEach((slide) => {
+        const rect = slide.getBoundingClientRect();
+        if (rect.top < viewportH && rect.bottom > 0) {
+          const progress = (viewportH - rect.top) / (viewportH + rect.height);
+          const py = Math.max(-18, Math.min(0, (progress - 0.5) * -20));
+          slide.style.setProperty('--parallax-y', `${py.toFixed(1)}px`);
+        }
+      });
+      parallaxScheduled = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!parallaxScheduled) {
+        requestAnimationFrame(applyParallax);
+        parallaxScheduled = true;
+      }
+    }, { passive: true });
+  }
+
+  // 10. MAGNETIC MICRO-INTERACTIONS (Requirement 13)
+  // Desktop only with fine pointer, subtle 3-4px pull
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !isReducedMotion) {
+    const magneticTargets = document.querySelectorAll('.btn-toc, .btn-collaborate, .btn-deck-nav');
+    magneticTargets.forEach((btn) => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const relX = e.clientX - (rect.left + rect.width / 2);
+        const relY = e.clientY - (rect.top + rect.height / 2);
+        const pullX = Math.max(-3.5, Math.min(3.5, relX * 0.16));
+        const pullY = Math.max(-3.5, Math.min(3.5, relY * 0.16));
+        btn.style.transform = `translate3d(${pullX.toFixed(1)}px, ${pullY.toFixed(1)}px, 0)`;
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
   }
 
   console.log('Amantha Perera Creator Deck Website initialized with 24 pages.');
