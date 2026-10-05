@@ -653,20 +653,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = document.getElementById('waMessage')?.value.trim() || '';
 
       const waText = 
-`👋 Hi Amantha! I reviewed your 2026 Creator Deck and would love to collaborate:
+`COLLABORATION INQUIRY | AMANTHA PERERA
 
-👤 Name / Brand: ${brandName}
-🎯 Project Type: ${collabType}
-💰 Budget Estimate: ${budget}
+*Brand / Client:* ${brandName}
+*Partnership Scope:* ${collabType}
+*Estimated Budget:* ${budget}
 
-📝 Campaign Brief / Details:
+*Project Brief / Overview:*
 ${message}
 
-(Inquiry sent via notamanthaperera.online)`;
+---
+Inquiry submitted via notamanthaperera.online`;
 
       const waUrl = `https://wa.me/94761521091?text=${encodeURIComponent(waText)}`;
       window.open(waUrl, '_blank');
-      showToast('Opening WhatsApp with your brief... 💬');
+      showToast('Opening WhatsApp with your brief...');
     });
   }
 
