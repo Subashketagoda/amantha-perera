@@ -1,6 +1,4 @@
-# robots.txt for notamanthaperera.online
 User-agent: *
 Allow: /
 
-# Sitemap
 Sitemap: https://notamanthaperera.online/sitemap.xml
