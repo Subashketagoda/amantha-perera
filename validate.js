@@ -106,6 +106,39 @@ if (fs.existsSync('sitemap.xml')) {
 
 assert(fs.existsSync('site.webmanifest'), 'site.webmanifest exists in root');
 
+// Supporting pages validation
+const supportingPages = ['about', 'work', 'campaigns', 'businesses', 'media', 'contact'];
+supportingPages.forEach(slug => {
+  const pageFile = path.join(slug, 'index.html');
+  assert(fs.existsSync(pageFile), `Supporting page ${slug}/index.html exists`);
+  if (fs.existsSync(pageFile)) {
+    const pageHtml = fs.readFileSync(pageFile, 'utf8');
+    
+    // Canonical
+    const pageCanon = pageHtml.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i);
+    const expectedCanon = `https://notamanthaperera.online/${slug}/`;
+    assert(pageCanon && pageCanon[1] === expectedCanon,
+      `${slug}/index.html canonical is exactly "${expectedCanon}"`);
+    
+    // Single H1
+    const h1s = (pageHtml.match(/<h1\b[^>]*>/gi) || []).length;
+    assert(h1s === 1, `${slug}/index.html has exactly 1 H1 tag`);
+
+    // No accidental noindex
+    const robots = pageHtml.match(/<meta\s+name=["']robots["']\s+content=["']([^"']+)["']/i);
+    assert(robots && robots[1].includes('index, follow') && !robots[1].includes('noindex'),
+      `${slug}/index.html allows indexing (no noindex)`);
+    
+    // Title & Description
+    assert(/<title>[^<]+<\/title>/i.test(pageHtml), `${slug}/index.html has title tag`);
+    assert(/<meta\s+name=["']description["']/i.test(pageHtml), `${slug}/index.html has meta description`);
+
+    // Schema
+    assert(/<script\s+type=["']application\/ld\+json["']>/i.test(pageHtml), `${slug}/index.html contains JSON-LD`);
+  }
+});
+
+
 
 if (errors > 0) {
   console.error(`\n${mode.toUpperCase()} failed with ${errors} error(s).`);
