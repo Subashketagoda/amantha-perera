@@ -56,6 +56,12 @@ const h1Count = (html.match(/<h1\b[^>]*>/gi) || []).length;
 assert(h1Count === 1, `Exactly 1 H1 tag found on page (found ${h1Count})`);
 
 // JSON-LD schemas
+const expectedSameAs = [
+  'https://www.linkedin.com/in/amanthaperera27/',
+  'https://www.instagram.com/notamanthaperera/',
+  'https://www.tiktok.com/@notamanthaperera'
+];
+
 const jsonLdMatch = html.match(/<script\s+type=["']application\/ld\+json["']>([\s\S]*?)<\/script>/i);
 assert(Boolean(jsonLdMatch), 'JSON-LD structured data is present');
 if (jsonLdMatch) {
@@ -67,6 +73,16 @@ if (jsonLdMatch) {
     assert(types.includes('WebSite'), 'JSON-LD contains WebSite schema');
     assert(types.includes('WebPage'), 'JSON-LD contains WebPage schema');
     assert(types.includes('BreadcrumbList'), 'JSON-LD contains BreadcrumbList schema');
+
+    // Verify exactly one Person schema (no duplicates)
+    const personItems = items.filter(x => x['@type'] === 'Person');
+    assert(personItems.length === 1, `Exactly 1 Person schema item found (found ${personItems.length})`);
+    
+    // Verify Person.sameAs
+    const person = personItems[0];
+    assert(Array.isArray(person.sameAs) && person.sameAs.length === 3, 'Person.sameAs has exactly 3 entries');
+    assert(JSON.stringify(person.sameAs) === JSON.stringify(expectedSameAs),
+      'Person.sameAs contains exactly verified LinkedIn, Instagram, and TikTok URLs');
 
     // Ensure all internal URLs in JSON-LD use canonical https://notamanthaperera.online/
     const jsonStr = JSON.stringify(data);
@@ -135,6 +151,17 @@ supportingPages.forEach(slug => {
 
     // Schema
     assert(/<script\s+type=["']application\/ld\+json["']>/i.test(pageHtml), `${slug}/index.html contains JSON-LD`);
+    const pageLdMatch = pageHtml.match(/<script\s+type=["']application\/ld\+json["']>([\s\S]*?)<\/script>/i);
+    if (pageLdMatch) {
+      const pageData = JSON.parse(pageLdMatch[1]);
+      const pageItems = pageData['@graph'] || [pageData];
+      const pagePerson = pageItems.filter(x => x['@type'] === 'Person');
+      assert(pagePerson.length === 1, `${slug}/index.html has exactly 1 Person schema (no duplicates)`);
+      if (pagePerson[0].sameAs) {
+        assert(JSON.stringify(pagePerson[0].sameAs) === JSON.stringify(expectedSameAs),
+          `${slug}/index.html Person.sameAs matches exact verified social profiles`);
+      }
+    }
   }
 });
 
