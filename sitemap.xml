@@ -3,17 +3,118 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://notamanthaperera.online/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://notamanthaperera.online/assets/images/hero-portrait.png</image:loc>
-      <image:title>Amantha Perera - Marketer, Founder, Creator, Performer</image:title>
-      <image:caption>Amantha Perera official creator deck portrait</image:caption>
+      <image:loc>https://notamanthaperera.online/assets/images/amantha-perera-marketer-founder.jpg</image:loc>
+      <image:title>Amantha Perera - Marketer, Founder, Creator &amp; Performer</image:title>
+      <image:caption>Amantha Perera official portrait - Sri Lankan marketer, founder, and creator</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://notamanthaperera.online/assets/pages/page_01.jpg</image:loc>
-      <image:title>Amantha Perera Creator and Partnership Deck 2026</image:title>
+      <image:loc>https://notamanthaperera.online/assets/images/amantha-perera-marketer-founder-800w.jpg</image:loc>
+      <image:title>Amantha Perera - Official Portrait</image:title>
+      <image:caption>Amantha Perera - Sri Lankan marketer, creator and founder</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/hero-portrait.png</image:loc>
+      <image:title>Amantha Perera - Cover Portrait</image:title>
+      <image:caption>Amantha Perera official deck cover portrait</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/page02_cafe_laptop.jpg</image:loc>
+      <image:title>Amantha Perera - Digital Marketing Strategy</image:title>
+      <image:caption>Amantha Perera working on digital marketing strategy and campaigns</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p05_card1_organic.jpg</image:loc>
+      <image:title>Amantha Perera - Founder of Organic Agency</image:title>
+      <image:caption>Amantha Perera, founder of Organic creative marketing agency</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p05_card2_cargo.jpg</image:loc>
+      <image:title>Amantha Perera - Co-Director at Cargo Pizzeria</image:title>
+      <image:caption>Cargo Pizzeria brand venture co-founded by Amantha Perera</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p05_card3_divide.jpg</image:loc>
+      <image:title>Amantha Perera - Divide Specialty Coffee Venture</image:title>
+      <image:caption>Divide Specialty Coffee hospitality brand co-founded by Amantha Perera</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p05_card4_sun.jpg</image:loc>
+      <image:title>Amantha Perera - The Sun Newspaper Columnist</image:title>
+      <image:caption>The Sun newspaper column written weekly by Amantha Perera</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p05_card5_music.jpg</image:loc>
+      <image:title>Amantha Perera - Musician and Music Releases</image:title>
+      <image:caption>Original music releases by Amantha Perera on Spotify</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p05_card6_standup.jpg</image:loc>
+      <image:title>Amantha Perera - Live Stand-Up Comedy</image:title>
+      <image:caption>Live stand-up comedy performance by Amantha Perera</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p07_amantha_standing.jpg</image:loc>
+      <image:title>Amantha Perera - Organic Agency Founder</image:title>
+      <image:caption>Amantha Perera, founder of Organic creative marketing agency Sri Lanka</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p08_dinidu_ring.jpg</image:loc>
+      <image:title>Amantha Perera - Dinidu Jewellery Viral Campaign</image:title>
+      <image:caption>Amantha Perera Dinidu Jewellery viral marketing campaign</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p10_driveline_fight.jpg</image:loc>
+      <image:title>Amantha Perera - Driveline Viral Campaign</image:title>
+      <image:caption>Amantha Perera Driveline viral street fight video campaign</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p11_sarigama_upalis.jpg</image:loc>
+      <image:title>Amantha Perera - Sarigama and Upalis Restaurant Campaigns</image:title>
+      <image:caption>Amantha Perera Sarigama and Upalis organic marketing campaigns</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p12_collabs_grid.jpg</image:loc>
+      <image:title>Amantha Perera - Brand Collaborations and Partners</image:title>
+      <image:caption>Amantha Perera brand collaborations with leading Sri Lankan brands</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p15_comedy_mic.jpg</image:loc>
+      <image:title>Amantha Perera - Stand-Up Comedy Show</image:title>
+      <image:caption>Amantha Perera stand-up comedy performance and show hosting</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p16_music_cover.jpg</image:loc>
+      <image:title>Amantha Perera - Eh Hati and Chandi Kollek Tracks</image:title>
+      <image:caption>Amantha Perera music releases Eh Hati and Chandi Kollek on Spotify</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p17_panel_stage.jpg</image:loc>
+      <image:title>Amantha Perera - Colombo Marketers Forum Speaker</image:title>
+      <image:caption>Amantha Perera speaking at Colombo Marketers Forum panel</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p17_solo_armchair.jpg</image:loc>
+      <image:title>Amantha Perera - Keynote Address on Organic Marketing</image:title>
+      <image:caption>Amantha Perera keynote speaker address on organic content marketing</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p17_award_group.jpg</image:loc>
+      <image:title>Amantha Perera - SLIM Brand Week Industry Forum</image:title>
+      <image:caption>Amantha Perera at SLIM Brand Week industry forum at Monarch Imperial</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p18_podcast_host.jpg</image:loc>
+      <image:title>Amantha Perera - Podcast Interviews and Guest Appearances</image:title>
+      <image:caption>Amantha Perera featured on business and creator podcast interviews</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notamanthaperera.online/assets/images/p19_thesun_column.jpg</image:loc>
+      <image:title>Amantha Perera - The No BS Marketer in The Sun</image:title>
+      <image:caption>Amantha Perera weekly column The No BS Marketer published in The Sun</image:caption>
     </image:image>
   </url>
 </urlset>
