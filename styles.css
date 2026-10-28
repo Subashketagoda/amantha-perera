@@ -2303,10 +2303,10 @@ body.is-loaded .p01-slide .hero-photo {
 
 .p23-pricing-card {
   border-radius: 22px;
-  padding: 44px;
+  padding: 32px 34px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .card-standard {
@@ -2361,15 +2361,15 @@ body.is-loaded .p01-slide .hero-photo {
 }
 
 .pkg-note {
-  font-size: 14px;
+  font-size: 13.5px;
   color: #6b7280;
-  margin-bottom: 28px;
+  margin-bottom: 18px;
 }
 
 .pkg-divider {
   height: 1px;
   background: #d1d5db;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .pkg-divider.divider-dark {
@@ -2380,7 +2380,12 @@ body.is-loaded .p01-slide .hero-photo {
   list-style: none;
   display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+
+.card-standard .pkg-features {
   gap: 16px;
+  margin-top: 4px;
 }
 
 .pkg-features li {
@@ -2403,6 +2408,60 @@ body.is-loaded .p01-slide .hero-photo {
   font-size: 13px;
   font-weight: 900;
   flex-shrink: 0;
+}
+
+.card-retainer {
+  background: #0e0e0e;
+  color: #ffffff;
+}
+
+.pkg-frequency {
+  font-size: 0.45em;
+  font-weight: 600;
+  color: #9ca3af;
+  letter-spacing: normal;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.pkg-exclusive-tag {
+  color: var(--color-yellow);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.pkg-features li.pkg-feature-row {
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 1rem;
+}
+
+.pkg-features li.pkg-feature-row .check-badge {
+  margin-top: 2px;
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.pkg-feature-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pkg-feature-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.pkg-feature-desc {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #9ca3af;
+  line-height: 1.35;
 }
 
 .p23-footnote {
@@ -4414,6 +4473,12 @@ body.is-loaded .p01-slide .hero-photo {
   }
 
   /* Page 23: Pricing Packages - Compact Fitting */
+  #page-23 {
+    padding-bottom: 90px;
+    height: auto;
+    min-height: 100dvh;
+  }
+
   .p23-pricing-grid {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -4442,6 +4507,27 @@ body.is-loaded .p01-slide .hero-photo {
   .pkg-features li {
     font-size: 12px;
     gap: 8px;
+  }
+
+  .pkg-features li.pkg-feature-row {
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .pkg-features li.pkg-feature-row .check-badge {
+    width: 18px;
+    height: 18px;
+    font-size: 8.5px;
+    margin-top: 1px;
+  }
+
+  .pkg-feature-title {
+    font-size: 11.5px;
+  }
+
+  .pkg-feature-desc {
+    font-size: 9.5px;
+    line-height: 1.25;
   }
 
   /* ==========================================================================
