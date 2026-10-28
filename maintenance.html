@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Under Maintenance | Amantha Perera</title>
+  <meta name="description" content="Amantha Perera's official portfolio is currently undergoing scheduled maintenance. Direct contact channels remain active.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0e0e0e">
+
+  <!-- Favicon / Branding -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg: #09090b;
+      --color-card: #121215;
+      --color-card-border: rgba(255, 255, 255, 0.08);
+      --color-yellow: #ffe410;
+      --color-yellow-glow: rgba(255, 228, 16, 0.35);
+      --color-text-white: #ffffff;
+      --color-text-muted: #9ca3af;
+      --color-text-dim: #6b7280;
+      --font-display: 'Anton', 'Oswald', sans-serif;
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text-white);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow-x: hidden;
+      padding: 32px 24px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Subtle background grid & glow */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(255, 228, 16, 0.07) 0%, rgba(9, 9, 11, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 760px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Top Brand Navigation */
+    .top-brand {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 40px;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--color-text-white);
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 19px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .dot-square {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--color-yellow);
+      margin-left: 5px;
+      border-radius: 1px;
+      box-shadow: 0 0 10px var(--color-yellow);
+    }
+
+    .brand-badge {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 800;
+      background: var(--color-yellow);
+      color: #0e0e0e;
+      padding: 3px 9px;
+      border-radius: 5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Main Content */
+    .maintenance-hero {
+      text-align: center;
+      padding: 24px 0 36px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 228, 16, 0.08);
+      border: 1px solid rgba(255, 228, 16, 0.25);
+      padding: 7px 18px;
+      border-radius: 9999px;
+      font-family: var(--font-heading);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-yellow);
+      margin-bottom: 24px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-yellow);
+      box-shadow: 0 0 0 0 var(--color-yellow-glow);
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 228, 16, 0.7);
+      }
+      70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 9px rgba(255, 228, 16, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 228, 16, 0);
+      }
+    }
+
+    .main-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 4.8rem);
+      line-height: 0.98;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      color: var(--color-text-white);
+    }
+
+    .main-title .highlight {
+      color: var(--color-yellow);
+      display: inline-block;
+      text-shadow: 0 0 25px rgba(255, 228, 16, 0.25);
+    }
+
+    .sub-lead {
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      color: var(--color-text-muted);
+      max-width: 580px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    /* Contact Action Cards */
+    .contact-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-card-border);
+      border-radius: 20px;
+      padding: 32px 36px;
+      text-align: left;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      margin-bottom: 28px;
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-card-title {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-yellow);
+      margin-bottom: 8px;
+    }
+
+    .contact-card-desc {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .actions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.22s ease;
+      cursor: pointer;
+    }
+
+    .btn-whatsapp {
+      background: var(--color-yellow);
+      color: #0e0e0e;
+      border: 1px solid var(--color-yellow);
+    }
+
+    .btn-whatsapp:hover {
+      background: #ffd800;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 228, 16, 0.35);
+    }
+
+    .btn-email {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--color-text-white);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-email:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    /* Social Links Strip */
+    .social-strip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 12px 0 20px;
+    }
+
+    .social-link {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text-dim);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .social-link:hover {
+      color: var(--color-yellow);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding-top: 24px;
+      font-size: 12px;
+      color: var(--color-text-dim);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .deck-bypass {
+      color: var(--color-text-dim);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .deck-bypass:hover {
+      color: var(--color-yellow);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 640px) {
+      body {
+        padding: 24px 18px;
+      }
+
+      .actions-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        padding: 24px 20px;
+      }
+
+      .footer {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="top-brand">
+      <div class="brand-logo">
+        <span class="brand-name">NOT AMANTHA PERERA<span class="dot-square"></span></span>
+      </div>
+      <span class="brand-badge">Colombo, LK</span>
+    </header>
+
+    <!-- Main Hero -->
+    <main class="maintenance-hero">
+      <div class="status-pill">
+        <span class="pulse-dot"></span>
+        <span>Scheduled Maintenance &amp; Updates</span>
+      </div>
+
+      <h1 class="main-title">
+        Page Under<br>
+        <span class="highlight">Maintenance.</span>
+      </h1>
+
+      <p class="sub-lead">
+        We're currently fine-tuning our creative deck and upgrading our digital experience to serve you better. We'll be back online very shortly.
+      </p>
+
+      <!-- Urgent Contact Card -->
+      <section class="contact-card">
+        <div class="contact-card-title">Commercial &amp; Urgent Inquiries</div>
+        <p class="contact-card-desc">
+          Brand sponsorship bookings, media inquiries, and retainer consultations are operating normally. Reach Amantha directly via WhatsApp or Email below:
+        </p>
+
+        <div class="actions-grid">
+          <a href="https://wa.me/94761521091?text=Hi%20Amantha!%20Reaching%20out%20while%20the%20website%20is%20updating." target="_blank" rel="noopener noreferrer" class="btn-action btn-whatsapp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 7.74C8.93 7.74 8.63 7.81 8.38 8.08C8.12 8.36 7.4 9.04 7.4 10.42C7.4 11.81 8.41 13.15 8.55 13.34C8.7 13.52 10.53 16.34 13.34 17.55C14.01 17.84 14.53 18.01 14.94 18.14C15.61 18.35 16.22 18.32 16.7 18.25C17.24 18.17 18.36 17.57 18.59 16.92C18.82 16.28 18.82 15.72 18.75 15.61C18.68 15.5 18.5 15.43 18.22 15.29C17.95 15.15 16.61 14.49 16.36 14.4C16.11 14.31 15.93 14.26 15.75 14.54C15.56 14.81 15.04 15.43 14.88 15.61C14.73 15.79 14.57 15.82 14.3 15.68C14.02 15.54 13.14 15.25 12.09 14.32C11.28 13.59 10.73 12.69 10.57 12.42C10.42 12.14 10.55 11.99 10.69 11.85C10.82 11.72 10.97 11.52 11.11 11.36C11.25 11.2 11.3 11.08 11.39 10.9C11.48 10.72 11.43 10.56 11.36 10.42C11.3 10.28 10.73 8.89 10.5 8.33C10.27 7.79 10.04 7.86 9.87 7.85C9.71 7.85 9.53 7.84 9.35 7.84L9.11 7.74Z"/></svg>
+            <span>WhatsApp Direct ↗</span>
+          </a>
+
+          <a href="mailto:amanthaperera02@gmail.com" class="btn-action btn-email">
+            <span>amanthaperera02@gmail.com ✉</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Verified Socials -->
+      <nav class="social-strip" aria-label="Official Social Channels">
+        <a href="https://www.instagram.com/notamanthaperera/" target="_blank" rel="noopener noreferrer" class="social-link">Instagram ↗</a>
+        <span style="color:var(--color-card-border);">•</span>
+        <a href="https://www.tiktok.com/@notamanthaperera" target="_blank" rel="noopener noreferrer" class="social-link">TikTok ↗</a>
+        <span style="color:var(--color-card-border);">•</span>
+        <a href="https://www.linkedin.com/in/amanthaperera27/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn ↗</a>
+      </nav>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span>&copy; 2026 Amantha Perera. All rights reserved.</span>
+      <a href="deck.html" class="deck-bypass">Deck Preview ↗</a>
+    </footer>
+  </div>
+
+</body>
+</html>
